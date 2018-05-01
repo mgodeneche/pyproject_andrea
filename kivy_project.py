@@ -7,21 +7,33 @@ from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+Builder.load_file('./kv/buttons.kv')
 
+class pgcdButton(Button):
+    pass
+
+class pgcmButton(Button):
+    pass
+
+class premierButton(Button):
+    pass
+
+class facteurButton(Button):
+    pass
+
+class leaveButton(Button):
+    pass
 
 class menuScreen(GridLayout):
-    def callback(instance):
-        print('The button <%s> is being pressed' % instance.text)
-        
-    def __init__(self, **kwargs):
-        super(menuScreen, self).__init__(**kwargs)
-        self.cols = 1
-        self.rows = 6
-        self.add_widget(Label(text="dd"))
-        btn1 = Button(text='PGCD')
-      
+    display = ObjectProperty()
 
-   
+    def pgcd(self):
+        #recuperer A et B
+        self.display.text = MyApp.pgcd(a,b)
+    
+     
 
 
 class MyApp(App):

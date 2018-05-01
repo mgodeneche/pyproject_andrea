@@ -1,2 +1,12 @@
 <menuScreen>:
+	display: display
 	rows: 5
+	BoxLayout:
+    	orientation: "vertical"
+        pgcdButton:
+      		root.pgcd()
+    Label:
+        id: display
+        font_size: dp(50)
+        text: '0'
+
