@@ -46,7 +46,7 @@ class Container(GridLayout):
 class MainApp(App):
 
     def build(self):
-        self.title = 'Awesome app!!!'
+        self.title = 'Application Python - Maxence Godeneche & Andrea Cicirello'
         return Container()
 
 
