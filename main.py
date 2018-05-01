@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
 from kivy.uix.gridlayout import GridLayout
-
+import utils
 
 from os import listdir
 kv_path = './kv/'
@@ -30,7 +30,7 @@ class Container(GridLayout):
 
     def pgcd(self):
         #recuperer A et B
-        self.display.text = "pgcd"
+        self.display.text = str(utils.pgcd(10,20))
     def pgcm(self):
         self.display.text = "pgcm"
     def premier(self):
