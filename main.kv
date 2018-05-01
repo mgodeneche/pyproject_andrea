@@ -1,13 +1,20 @@
 <Container>:
     display: display
-    rows: 1
+    rows: 5
     BoxLayout:
         orientation: "vertical"
         PgcdButton:
             on_release: root.pgcd()
+		PgcmButton:
+			on_release : root.pgcm()
+		PremierButton:
+			on_release : root.premier()
+		FacteurButton:
+			on_release : root.facteurs()
         LeaveButton:
             on_release: root.leave()
     Label:
         id: display
         font_size: dp(50)
         text: '0'
+		

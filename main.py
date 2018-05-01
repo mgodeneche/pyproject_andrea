@@ -30,8 +30,13 @@ class Container(GridLayout):
 
     def pgcd(self):
         #recuperer A et B
-        self.display.text = "3"
-        
+        self.display.text = "pgcd"
+    def pgcm(self):
+        self.display.text = "pgcm"
+    def premier(self):
+        self.display.text = "premier"
+    def facteurs(self):
+        self.display.text = "facteurs"
     def leave(self):
         exit()
 
