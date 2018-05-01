@@ -1,14 +1,13 @@
 <Container>:
-	display: display
-	rows: 1
-	BoxLayout:
-    	orientation: "vertical"
-        pgcdButton:
-      		root.pgcd()
-      	leaveButton:
-      		root.leave()
+    display: display
+    rows: 1
+    BoxLayout:
+        orientation: "vertical"
+        PgcdButton:
+            on_release: root.pgcd()
+        LeaveButton:
+            on_release: root.leave()
     Label:
         id: display
         font_size: dp(50)
         text: '0'
-

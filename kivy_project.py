@@ -1,6 +1,4 @@
 # coding: utf-8
-import kivy
-kivy.require('1.0.6') # replace with your current kivy version !
 
 from kivy.app import App
 from kivy.uix.label import Label
@@ -9,24 +7,16 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
+
 from os import listdir 
 kv_path = './kv/'
 for kv in listdir(kv_path):
     Builder.load_file(kv_path+kv)
 
-class pgcdButton(Button):
+class PgcdButton(Button):
     pass
 
-class pgcmButton(Button):
-    pass
-
-class premierButton(Button):
-    pass
-
-class facteurButton(Button):
-    pass
-
-class leaveButton(Button):
+class LeaveButton(Button):
     pass
 
 class Container(GridLayout):
@@ -34,7 +24,8 @@ class Container(GridLayout):
 
     def pgcd(self):
         #recuperer A et B
-        self.display.text = MyApp.pgcd(a,b)
+        self.display.text = "3"
+        
     def leave(self):
         exit()
       
