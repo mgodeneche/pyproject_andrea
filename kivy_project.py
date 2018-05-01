@@ -9,7 +9,10 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
-Builder.load_file('./kv/buttons.kv')
+from os import listdir 
+kv_path = './kv/'
+for kv in listdir(kv_path):
+    Builder.load_file(kv_path+kv)
 
 class pgcdButton(Button):
     pass
@@ -32,8 +35,8 @@ class menuScreen(GridLayout):
     def pgcd(self):
         #recuperer A et B
         self.display.text = MyApp.pgcd(a,b)
-    
-     
+
+      
 
 
 class MyApp(App):
