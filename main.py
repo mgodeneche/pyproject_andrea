@@ -13,8 +13,17 @@ for kv in listdir(kv_path):
 class PgcdButton(Button):
     pass
 
+class PgcmButton(Button):
+    pass
+
+class PremierButton(Button):
+    pass
+
+class FacteurButton(Button):
+    pass
 class LeaveButton(Button):
     pass
+
 
 class Container(GridLayout):
     display = ObjectProperty()
