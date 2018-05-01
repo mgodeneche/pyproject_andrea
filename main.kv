@@ -1,10 +1,12 @@
-<menuScreen>:
+<Container>:
 	display: display
-	rows: 5
+	rows: 1
 	BoxLayout:
     	orientation: "vertical"
         pgcdButton:
       		root.pgcd()
+      	leaveButton:
+      		root.leave()
     Label:
         id: display
         font_size: dp(50)

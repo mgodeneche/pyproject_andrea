@@ -29,13 +29,14 @@ class facteurButton(Button):
 class leaveButton(Button):
     pass
 
-class menuScreen(GridLayout):
+class Container(GridLayout):
     display = ObjectProperty()
 
     def pgcd(self):
         #recuperer A et B
         self.display.text = MyApp.pgcd(a,b)
-
+    def leave(self):
+        exit()
       
 
 
@@ -43,7 +44,7 @@ class MyApp(App):
 
     def build(self):
         self.title ="Application Python - Andrea Cicirello"
-        return menuScreen()
+        return Container()
 
     def afficherMenu():
         print ("MENU :")
