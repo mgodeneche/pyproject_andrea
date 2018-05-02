@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.button import Button
@@ -39,45 +40,31 @@ class Popup(Popup):
 class Container(GridLayout):
     display = ObjectProperty()
     aValue = ObjectProperty()
-    global a
+    global a 
     global b
+    a = 0
+    b = 0
     def pgcd(self):
-        try:
-            a,b
-        except NameError:
-            utils.openPopup()
-        else:
+        if(utils.inputValidator(a) and  utils.inputValidator(b)):
             self.display.text = str(utils.pgcd(a,b))
     def ppcm(self):
-        try:
-            a,b
-        except NameError:
-            print "well, it WASN'T defined after all!"
-        else:
-            self.display.text = str(utils.ppcm(a,b))
+        if(utils.inputValidator(a) and  utils.inputValidator(b)):
+           self.display.text = str(utils.ppcm(a,b))
     def premier(self):
-        try:
-            a
-        except NameError:
-            print "well, it WASN'T defined after all!"
-        else:
-            self.display.text = str(utils.premier(a))
+        if(utils.inputValidator(a)):
+           self.display.text = str(utils.premier(a))
     def facteurs(self):
-         try:
-            a
-         except NameError:
-            print "well, it WASN'T defined after all!"
-         else:
+        if(utils.inputValidator(a)):
             self.display.text = str(utils.pdecomp(a))
     def leave(self):
         exit()
     def updateA(container,textValue):
         global a
-        if(textValue.text!=''):
+        if(utils.inputValidator(textValue.text)):
             a = int(textValue.text)
     def updateB(container,textValue):
         global b
-        if(textValue.text!=''):
+        if(utils.inputValidator(textValue.text)):
             b = int(textValue.text)
      
         
