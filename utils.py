@@ -1,4 +1,7 @@
 from math import sqrt
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
+from kivy.uix.button import Button
 def pgcd(a,b):
     print(a)
     print(b)
@@ -39,3 +42,15 @@ def pdecomp(a):
             return str(anciena)
         else :
             return result
+
+def openPopup():
+    content = Button(text='Ok', size=(50,50))
+    popup = Popup(title='Valeurs incorrectes !', content=content,
+              auto_dismiss=False, size_hint=(None, None), size=(200, 100))
+    content.bind(on_press=popup.dismiss)
+
+    popup.open()
+
+
+def closePopup():
+    popup.dismiss()

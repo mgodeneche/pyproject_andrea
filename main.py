@@ -32,7 +32,10 @@ class TextInputA(TextInput):
     pass
 class TextInputB(TextInput):
     pass
-
+class Popup(Popup):
+   
+    def dismiss():
+        popup.dismiss()
 class Container(GridLayout):
     display = ObjectProperty()
     aValue = ObjectProperty()
@@ -42,7 +45,7 @@ class Container(GridLayout):
         try:
             a,b
         except NameError:
-            print "well, it WASN'T defined after all!"
+            utils.openPopup()
         else:
             self.display.text = str(utils.pgcd(a,b))
     def ppcm(self):
