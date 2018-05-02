@@ -26,55 +26,18 @@ class FacteurButton(Button):
     pass
 class LeaveButton(Button):
     pass
-
-class AnswerWidget(BoxLayout):
-    def __init__(self,**kwargs):
-        super(AnswerWidget,self).__init__(**kwargs)
-
-        self.orientation = "vertical"
-
-        self.name_input = TextInput(text='AAAAA')
-
-        self.add_widget(self.name_input)
-
-        self.save_button = Button(text="Valider")
-        self.save_button.bind(on_press=self.save)
-
-        self.save_popup = SaveDialog(self) # initiation of the popup, and self gets passed
-
-        self.add_widget(self.save_button)
-
-
-    def save(self,*args):
-        self.save_popup.open()
-        
-class SaveDialog(Popup):
-
-    def __init__(self,my_widget,**kwargs):  # my_widget is now the object where popup was called from.
-        super(SaveDialog,self).__init__(**kwargs)
-
-        self.my_widget = my_widget
-
-        self.content = BoxLayout(orientation="horizontal")
-
-        self.save_button = Button(text='Save')
-        self.save_button.bind(on_press=self.save)
-
-        self.cancel_button = Button(text='Cancel')
-        self.cancel_button.bind(on_press=self.cancel)
-
-        self.content.add_widget(self.save_button)
-        self.content.add_widget(self.cancel_button)
-
-    def save(self,*args):
-        print "save %s" % self.AnswerWidget.name_input.text # and you can access all of its attributes
-        #do some save stuff
-        self.dismiss()
-
-    def cancel(self,*args):
-        print "cancel"
-        self.dismiss()
-
+class SaveButton(Button):
+    pass
+class TextInputA(TextInput):
+    pass
+class TextInputB(TextInput):
+    pass
+class AnswerWidget(BoxLayout):  
+    def on_enter(instance, value):
+        print('User pressed enter in', instance)
+class Header(GridLayout):
+   def validate(self):
+       self.a.text = "A"
 
 class Container(GridLayout):
     display = ObjectProperty()
@@ -83,7 +46,6 @@ class Container(GridLayout):
     global b
     b = 20
     def pgcd(self):
-        return AnswerWidget()
         self.display.text = str(utils.pgcd(a,b))
     def ppcm(self):
         self.display.text = str(utils.ppcm(a,b))

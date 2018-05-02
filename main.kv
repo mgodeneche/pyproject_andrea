@@ -1,19 +1,50 @@
 <Container>:
     display: display
-    rows: 5
+    rows:4
+	cols:2
+	Label:
+		id: A
+		size_hint: (.2, None)
+		size: 100, 30
+		height:40
+		font_size: 20
+		text: 'A = '
+	TextInput:
+		size_hint: (.2, None)
+		size: 100, 30
+		rows:1
+		multiline:False 
+	Label:
+		size_hint: (.2, None)
+		size: 100, 30
+		id: B
+		font_size: 20
+		text: 'B = '
+	TextInput:
+		size_hint: (.2, None)
+		size: 100, 30
+		rows:1
+		multiline:False 
+		
     BoxLayout:
         orientation: "vertical"
         PgcdButton:
+			size: 100, 30
             on_release: root.pgcd()
 		PpcmButton:
+			size: 100, 30
 			on_release : root.ppcm()
 		PremierButton:
+			size: 100, 30
 			on_release : root.premier()
 		FacteurButton:
+			size: 100, 30
 			on_release : root.facteurs()
         LeaveButton:
+			size: 100, 30
             on_release: root.leave()
     Label:
         id: display
         font_size: dp(50)
-        text: '0'
+        text: 'Résultat = 0'
+		size: 100, 20
