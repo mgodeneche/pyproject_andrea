@@ -39,13 +39,33 @@ class Container(GridLayout):
     global a
     global b
     def pgcd(self):
-        self.display.text = str(utils.pgcd(a,b))
+        try:
+            a,b
+        except NameError:
+            print "well, it WASN'T defined after all!"
+        else:
+            self.display.text = str(utils.pgcd(a,b))
     def ppcm(self):
-        self.display.text = str(utils.ppcm(a,b))
+        try:
+            a,b
+        except NameError:
+            print "well, it WASN'T defined after all!"
+        else:
+            self.display.text = str(utils.ppcm(a,b))
     def premier(self):
-        self.display.text = str(utils.premier(a))
+        try:
+            a
+        except NameError:
+            print "well, it WASN'T defined after all!"
+        else:
+            self.display.text = str(utils.premier(a))
     def facteurs(self):
-        self.display.text = str(utils.pdecomp(a))
+         try:
+            a
+         except NameError:
+            print "well, it WASN'T defined after all!"
+         else:
+            self.display.text = str(utils.pdecomp(a))
     def leave(self):
         exit()
     def updateA(container,textValue):
