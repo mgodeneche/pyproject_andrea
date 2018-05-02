@@ -32,19 +32,12 @@ class TextInputA(TextInput):
     pass
 class TextInputB(TextInput):
     pass
-class AnswerWidget(BoxLayout):  
-    def on_enter(instance, value):
-        print('User pressed enter in', instance)
-class Header(GridLayout):
-   def validate(self):
-       self.a.text = "A"
 
 class Container(GridLayout):
     display = ObjectProperty()
+    aValue = ObjectProperty()
     global a
-    a = 20
     global b
-    b = 20
     def pgcd(self):
         self.display.text = str(utils.pgcd(a,b))
     def ppcm(self):
@@ -55,7 +48,17 @@ class Container(GridLayout):
         self.display.text = str(utils.pdecomp(a))
     def leave(self):
         exit()
-
+    def updateA(container,textValue):
+        global a
+        if(textValue.text!=''):
+            a = int(textValue.text)
+    def updateB(container,textValue):
+        global b
+        if(textValue.text!=''):
+            b = int(textValue.text)
+     
+        
+        
 class MainApp(App):
 
     def build(self):

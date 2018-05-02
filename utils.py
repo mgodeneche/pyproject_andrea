@@ -1,5 +1,7 @@
 from math import sqrt
 def pgcd(a,b):
+    print(a)
+    print(b)
     while a%b!=0:
         a,b = b,a%b
     return b

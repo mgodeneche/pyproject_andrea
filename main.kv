@@ -3,28 +3,32 @@
     rows:4
 	cols:2
 	Label:
-		id: A
+		id : aLabel
 		size_hint: (.2, None)
 		size: 100, 30
 		height:40
 		font_size: 20
 		text: 'A = '
 	TextInput:
+		id : aValue
 		size_hint: (.2, None)
 		size: 100, 30
 		rows:1
 		multiline:False 
+		on_text: root.updateA(aValue)
 	Label:
+		id : bLabel
 		size_hint: (.2, None)
 		size: 100, 30
-		id: B
 		font_size: 20
 		text: 'B = '
 	TextInput:
+		id : bValue
 		size_hint: (.2, None)
 		size: 100, 30
 		rows:1
 		multiline:False 
+		on_text: root.updateB(bValue)
 		
     BoxLayout:
         orientation: "vertical"
