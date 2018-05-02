@@ -5,8 +5,6 @@ from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 def pgcd(a,b):
-    print(a)
-    print(b)
     while a%b!=0:
         a,b = b,a%b
     return b
@@ -61,7 +59,6 @@ def closePopup():
     popup.dismiss()
 
 def inputValidator(x):
-    print(x)
     return(nonEmptyValidation(x) and intValueValidation(x) and nonZeroValidation(x))
 
 def nonEmptyValidation(x):
